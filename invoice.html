@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Invoice Pembayaran</title>
+    <link rel="stylesheet" href="invoice.css">
+</head>
+<body>
+    <div class="invoice-container">
+        <div class="invoice-header">
+            <h2>Invoice</h2>
+            <p id="invoice-date"></p> </div>
+        <div class="invoice-details">
+            <div class="customer-details">
+                <h3>Detail Pelanggan</h3>
+                <p><strong>Nama:</strong> <span id="nama"></span></p>
+                <p><strong>Email:</strong> <span id="email"></span></p>
+                <p><strong>Alamat:</strong> <span id="alamat"></span></p>
+            </div>
+            <div class="order-details">
+                <h3>Detail Pesanan</h3>
+                <table id="product-info">
+                    <thead>
+                        <tr>
+                            <th>Produk</th>
+                            <th>Harga</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                </table>
+                <p class="total"><strong>Total:</strong> Rp <span id="invoice-total"></span>,000</p> 
+            </div>            
+        </div>
+        <div class="invoice-footer">
+            <p>Terima kasih atas pembelian Anda!</p>
+        </div>
+    </div>
+
+    <script>
+            // Function to get URL parameters
+        function getQueryParam(name) {
+            const urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get(name);
+        }
+
+
+        document.addEventListener('DOMContentLoaded', function () {
+    // ... (fungsi getQueryParam dan pengisian data pelanggan) ...
+
+    // Get product data and populate the table
+    const productData = JSON.parse(localStorage.getItem('productData'));
+    const productTableBody = document.getElementById('product-info').getElementsByTagName('tbody')[0];
+    let total = 0; 
+
+    if (productData) {
+        for (const key in productData) {
+            if (productData.hasOwnProperty(key)) {
+                const product = productData[key];
+                const row = productTableBody.insertRow();
+                const nameCell = row.insertCell();
+                const priceCell = row.insertCell();
+                nameCell.textContent = product.name;
+                priceCell.textContent = `Rp ${product.price.toLocaleString()}`;
+                total += parseInt(product.price); // Accumulate the total price
+            }
+        }
+        document.getElementById('invoice-total').textContent = total.toLocaleString(); // Display total price
+    } else {
+        productTableBody.innerHTML = '<tr><td colspan="2">Tidak ada produk yang dipilih.</td></tr>';
+    }
+});
+
+document.getElementById('nama').textContent = getQueryParam('nama') || 'N/A';
+        document.getElementById('alamat').textContent = getQueryParam('alamat') || 'N/A';
+        document.getElementById('email').textContent = getQueryParam('email') || 'N/A';
+        document.getElementById('telepon').textContent = getQueryParam('telepon') || 'N/A';
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Formulir Pembayaran</title>
+    <link rel="stylesheet" href="bayar.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Formulir Pembayaran</h2>
+        <form action="invoice.html" method="get">
+            <input name="cek" value="cek" style="visibility: 0; opacity: 0;"/>
+        <form id="payment-form">
+            <div class="form-group">
+                <label for="nama">Nama Lengkap:</label>
+                <input type="text" id="nama" name="nama" required>
+            </div>
+
+            <div class="form-group">
+                <label for="email">Alamat Email:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+
+            <div class="form-group">
+                <label for="alamat">Alamat Pengiriman:</label>
+                <textarea id="alamat" name="alamat" required></textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="payment-method">Metode Pembayaran:</label>
+                <select id="payment-method" name="payment-method">
+                    <option value="transfer">Transfer Bank</option>
+                    <option value="credit-card">Kartu Kredit</option>
+                    <option value="e-wallet">E-Wallet</option>
+                </select>
+            </div>
+            <div class="form-harga">
+                <div id="product-info"></div>
+
+
+            <button type="submit">Bayar Sekarang</button>
+        </form>
+    </div>
+    
+</body>
+
+<script>
+  const productData = JSON.parse(localStorage.getItem('productData'));
+
+const productInfoDiv = document.getElementById('product-info');
+
+if (productData) {
+    for (const key in productData) {
+        if (productData.hasOwnProperty(key)) {
+            const product = productData[key];
+            const productElement = document.createElement('div');
+            productElement.innerHTML = `
+                        <label>Nama Produk: ${product.name}</label><br>
+                        <label>Harga Produk: Rp ${product.price}</label>
+                    `;
+            productInfoDiv.appendChild(productElement);
+        }
+    }
+} else {
+    productInfoDiv.innerHTML = '<p>Tidak ada produk yang dipilih.</p>';
+}
+
+</script>
+</html>

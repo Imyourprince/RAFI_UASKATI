@@ -1,0 +1,118 @@
+header {
+    background-color: #2457fd;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 40px 0;
+}
+
+/* ... (gaya sebelumnya) ... */
+
+/* Gaya untuk tulisan besar di kiri */
+.navbar-left {
+    float: left;
+}
+
+.navbar-left h2 {
+    margin: 0;
+    font-size: 24px; /* Sesuaikan ukuran font */
+}
+
+/* Gaya untuk tombol menu */
+.button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #0863c4; /* Warna latar belakang tombol */
+    color: #fff; /* Warna teks tombol */
+    text-decoration:   
+ none;
+    border-radius: 5px; /* Membuat sudut tombol membulat */
+}
+
+.buy-button {
+    display: block; /* Membuat tombol memenuhi lebar container */
+    width: 100%;
+    padding: 10px;
+    background-color: #4CAF50; /* Warna hijau */
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.buy-button:hover {
+    background-color: #ffcf33; /* Warna lebih gelap saat dihover */
+}
+
+.button:hover {
+    background-color: #0056b3; /* Warna latar belakang saat dihover */
+}
+
+.logo {
+    float: left; /* Logo di kiri */
+}
+
+nav {
+    float: right; /* Menu di kanan */
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin-left: 25px;
+}
+
+.search-bar {
+    float: right; /* Pencarian di kanan */
+    margin-top: 8px; /* Sesuaikan posisi */
+}
+
+/* Gaya umum */
+body {
+    font-family: sans-serif;
+    margin: 0;
+}/* ... (gaya sebelumnya) ... */
+
+/* Gaya untuk produk */
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Dua kolom */
+    gap: 20vh; /* Jarak antara produk */
+    border-radius: 10%;
+    border-color: #333;
+}
+
+.product {
+    text-align: center;
+}
+
+.product img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+
+.container {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Gaya main content */
+main {
+    padding: 40px 0;
+}
+
+/* Gaya footer */
+footer {
+    background-color: #0b8ffa;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+}

@@ -1,0 +1,47 @@
+/* ... (gaya sebelumnya) ... */
+
+/* Gaya untuk formulir pembayaran */
+#payment-form {
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+button[type="submit"] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    margin-top: 10%;
+    border-radius: 4px;
+    cursor: pointer;
+    float: left;
+  }
+
+input[type="text"],
+input[type="email"],
+textarea,
+select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+.form-harga {
+    border: 2px solid #000; /* Warna border hitam */
+    padding: 20px; /* Jarak dalam border */
+    margin: 20px 0; /* Jarak luar border */
+    border-radius: 5px; /* Sudut border melengkung */
+}
+#product-info {
+    margin-top: 10px; /* Jarak atas pada produk info */
+    position: relative;
+    text-align: center;
+}

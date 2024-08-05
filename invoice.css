@@ -1,0 +1,69 @@
+/* Gaya Umum */
+body {
+    font-family: 'Helvetica Neue', sans-serif; /* Font modern */
+    background-color: #f8f8f8;
+    color: #333;
+}
+
+.invoice-container {
+    max-width: 800px;
+    margin: 50px auto;
+    background-color: #fff;
+    padding: 40px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Efek bayangan halus */
+    border-radius: 10px; /* Sudut membulat */
+}
+
+.invoice-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.invoice-header h2 {
+    color: #2980b9; /* Warna biru tua */
+    font-size: 36px;
+    margin-bottom: 10px;
+}
+
+/* Detail Pelanggan dan Pesanan */
+.invoice-details {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+}
+
+.customer-details,
+.order-details {
+    width: 48%;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+}
+
+.customer-details h3,
+.order-details h3 {
+    color: #2980b9;
+    margin-bottom: 15px;
+}
+
+/* Detail Produk */
+#product-info > div {
+    margin-bottom: 15px;
+    padding: 10px;
+    border-bottom: 1px dotted #ddd;
+}
+
+#product-info strong {
+    display: block;
+    margin-bottom: 5px;
+}
+#product-info th, #product-info td {
+    padding: 10px;
+    border: 1px solid #ddd;
+}
+
+/* Footer Invoice */
+.invoice-footer {
+    text-align: center;
+    margin-top: 40px;
+}
